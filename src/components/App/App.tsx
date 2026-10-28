@@ -39,11 +39,13 @@ function App() {
         canReset={totalVotes > 0}
         onReset={resetVotes}
       />
-      <VoteStats
-        votes={votes}
-        totalVotes={totalVotes}
-        positiveRate={positiveRate}
-      />
+      {totalVotes > 0 && (
+        <VoteStats
+          votes={votes}
+          totalVotes={totalVotes}
+          positiveRate={positiveRate}
+        />
+      )}
       {totalVotes === 0 && <Notification />}
     </div>
   );
